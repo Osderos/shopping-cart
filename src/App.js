@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Home from "./views/Home";
 import Shop from "./views/Shop";
 import Contact from "./views/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   useEffect(() => {
@@ -12,7 +13,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="App" style={{ height: "100%" }}>
       <Router>
         <Navbar />
         <Routes>
@@ -20,6 +21,7 @@ function App() {
           <Route path="/shop" exact element={<Shop />} />
           <Route path="/contact" exact element={<Contact />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );

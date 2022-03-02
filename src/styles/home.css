@@ -1,3 +1,39 @@
-.home-container{
-    background-image: url('../images/homebg.jpeg');
+.home-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+}
+
+.welcome-container {
+  width: 50%;
+  background-color: rgb(12, 145, 72, 0.5);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  padding: 25px;
+  border-radius: 25px;
+  color: aliceblue;
+  margin-left: 50px;
+}
+
+
+.flashWhite:hover {
+  border: 2px solid white;
+  cursor: pointer;
+
+  border-radius: 25px;
+  padding: 5px;
+  color: gold;
+  background-color: black;
+}
+
+.flashWhite {
+  color: white;
+  transition: all 0.3s ease-out;
+  width: fit-content;
+}
+
+.flashGold {
+  color: gold;
+  transition: all 0.3s ease-out;
+  width: fit-content;
 }
