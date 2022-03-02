@@ -13,7 +13,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App" style={{ height: "100%" }}>
+    <div className="App" >
       <Router>
         <Navbar />
         <Routes>

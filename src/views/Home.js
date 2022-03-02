@@ -6,17 +6,15 @@ function Home() {
   useEffect(() => {
     console.log("Home component did mount");
   
-
     const intrv = setInterval(flashText, 1000);
 
     return () => {
       console.log('Home component did unmount')
       clearInterval(intrv);
     };
-  });
+  },[]);
 
   
-
   const flashText = () => {
     const elem = document.querySelector("#flashWord");
     if (elem.className === "flashWhite") {

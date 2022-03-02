@@ -16,24 +16,17 @@
 }
 
 
-.flashWhite:hover {
-  border: 2px solid white;
-  cursor: pointer;
-
-  border-radius: 25px;
-  padding: 5px;
-  color: gold;
-  background-color: black;
-}
-
 .flashWhite {
   color: white;
   transition: all 0.3s ease-out;
   width: fit-content;
+  cursor: pointer;
 }
 
 .flashGold {
   color: gold;
   transition: all 0.3s ease-out;
   width: fit-content;
+  transform: scale(1.1);
+  cursor: pointer
 }
