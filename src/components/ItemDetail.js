@@ -9,6 +9,7 @@ function ItemDetail(props) {
   const item = props.itemsList.find(
     ({ idNumber }) => idNumber === parseInt(id)
   );
+  
 
   const handleDisabled = () => {
     setDisabled(!isDisabled);
@@ -18,7 +19,7 @@ function ItemDetail(props) {
     <button
     className="removeFromCart"
       onClick={() => {
-        props.decrementCartItems(item);
+        props.decrementCartItems(item.idNumber);
         handleDisabled();
       }}
     >

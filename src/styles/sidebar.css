@@ -37,3 +37,29 @@
   align-items: center;
   gap:10px;
 }
+
+.checkout{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.checkoutBtn, .clearBtn{
+ background-color: white;
+ padding:10px;
+ border-radius:10px;
+ transition: 0.3s;
+}
+
+.checkoutBtn:hover{
+  background-color: green;
+  color:aliceblue;
+  cursor: pointer;
+}
+
+.clearBtn:hover{
+  background-color: red;
+ color: aliceblue;
+ cursor: pointer;
+}

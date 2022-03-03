@@ -12,6 +12,23 @@ function Sidebar(props) {
     />
   ));
 
+  const priceList = props.selectedItemsList.map((item) => item.price);
+
+  const sum = priceList.reduce((psum, elem) => psum + elem, 0);
+
+  const totalAmount = () => {
+    if (sum === 0) {
+      return <h2>Shopping cart is empty</h2>;
+    }
+    return (
+      <div className="checkout">
+        <h2>Total amount {sum} $</h2>
+        <h3 className="checkoutBtn">To Payment</h3>
+        <h3 className="clearBtn" onClick={props.clearAll}>Clear</h3>
+      </div>
+    );
+  };
+
   return (
     <div id="mySidenav" className="sidenav">
       <div className="closebtn" onClick={props.closeNav}>
@@ -20,8 +37,7 @@ function Sidebar(props) {
       <div className="sidebar-container">
         <h2>Checkout</h2>
         {sidebarItemsList}
-
-        <h2>Total Amount : 1232$</h2>
+        {totalAmount()}
       </div>
     </div>
   );

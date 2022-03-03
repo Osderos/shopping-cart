@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import ItemDetail from "./components/ItemDetail";
 import { getData } from "./utils/getData";
 import Sidebar from "./components/Sidebar";
+import { UserContext } from "./utils/UserContext";
 
 function App() {
   const NUMBER_OF_ITEMS = 10;
@@ -33,7 +34,7 @@ function App() {
   const decrementCartItems = (removedItem) => {
     setCount(count - 1);
     setSelectedItemsList(
-      selectedItemsList.filter((elem) => elem.idNumber !== removedItem.idNumber)
+      selectedItemsList.filter((elem) => elem.idNumber !== removedItem)
     );
   };
 
@@ -45,11 +46,29 @@ function App() {
     document.getElementById("mySidenav").style.width = "0";
   }
 
+  const providerValue = {
+    selectedItemsList,
+    decrementCartItems,
+  };
+
+  const clearAll = () => {
+    setCount(0);
+    setSelectedItemsList([]);
+  };
+
   return (
     <div className="App">
       <Router>
         <Navbar count={count} openNav={openNav} />
-        <Sidebar closeNav={closeNav} selectedItemsList={selectedItemsList} />
+
+        <UserContext.Provider value={providerValue}>
+          <Sidebar
+            closeNav={closeNav}
+            selectedItemsList={selectedItemsList}
+            clearAll={clearAll}
+          />
+        </UserContext.Provider>
+
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/shop" exact element={<Shop itemsList={itemsList} />} />

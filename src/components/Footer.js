@@ -3,7 +3,7 @@ import '../styles/footer.css'
 
 function Footer() {
   return (
-     <div className="footer"> &copy; OsDeRos 2021</div>
+     <div className="footer"> &copy; OsDeRos 2022</div>
   )
 }
 
