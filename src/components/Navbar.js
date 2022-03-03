@@ -18,7 +18,7 @@ function Navbar(props) {
         <li>
           <Link to="/contact">Contact</Link>
         </li>
-        <div className="shoppingCart">
+        <div className="shoppingCart" onClick={props.openNav}>
           <i className="fa-solid fa-cart-shopping"></i>
           <div className="itemsAmount">{props.count}</div>
         </div>

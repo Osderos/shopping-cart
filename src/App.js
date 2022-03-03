@@ -7,6 +7,7 @@ import Contact from "./views/Contact";
 import Footer from "./components/Footer";
 import ItemDetail from "./components/ItemDetail";
 import { getData } from "./utils/getData";
+import Sidebar from "./components/Sidebar";
 
 function App() {
   const NUMBER_OF_ITEMS = 10;
@@ -36,10 +37,19 @@ function App() {
     );
   };
 
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+
   return (
     <div className="App">
       <Router>
-        <Navbar count={count} />
+        <Navbar count={count} openNav={openNav} />
+        <Sidebar closeNav={closeNav} selectedItemsList={selectedItemsList} />
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/shop" exact element={<Shop itemsList={itemsList} />} />

@@ -1,0 +1,10 @@
+.sidebarItem-container{
+    display: flex;
+    width: 75%;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    color: aliceblue;
+    padding: 10px;
+    border-radius: 10px;
+}

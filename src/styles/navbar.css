@@ -54,6 +54,7 @@ li {
   margin-left: 5px;
   color: white;
   position: relative;
+  cursor: pointer;
 }
 
 .itemsAmount {
