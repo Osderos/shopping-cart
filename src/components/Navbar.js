@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../styles/navbar.css";
 
-function Navbar() {
+function Navbar(props) {
   return (
     <div className="header">
       <div className="logo">
@@ -20,7 +20,7 @@ function Navbar() {
         </li>
         <div className="shoppingCart">
           <i className="fa-solid fa-cart-shopping"></i>
-          <div className="itemsAmount">0</div>
+          <div className="itemsAmount">{props.count}</div>
         </div>
       </div>
     </div>

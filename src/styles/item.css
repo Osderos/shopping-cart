@@ -1,6 +1,6 @@
 .item-container {
   width: 150px;
-  height: 280px;
+  height: 300px;
   background-color: rgb(198, 205, 211);
   display: flex;
   flex-direction: column;
@@ -52,12 +52,14 @@
   padding: 5px;
   border-radius: 2px;
   transition: all 1s ease;
-  color: aliceblue;
-  font-weight: bolder;
-  
 }
 
-.itemInspect:hover{
+.itemInspect:hover {
   width: 75%;
   cursor: pointer;
+}
+
+.itemInspectText {
+  color: aliceblue;
+  font-weight: bolder;
 }

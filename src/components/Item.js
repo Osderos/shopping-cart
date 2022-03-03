@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/item.css";
-import { priceGenerator } from "../utils/priceGenerator";
 
 function Item(props) {
   return (
@@ -11,9 +10,9 @@ function Item(props) {
       </div>
       <div className="bottomDetails">
         <h2 className="itemTitle">{props.title}</h2>
-        <div className="itemPrice">Price : {priceGenerator()} $</div>
+        <div className="itemPrice">Price : {props.price} $</div>
         <div className="itemInspect">
-          <Link to={`/shop/${props.uniqueID}`}>
+          <Link className="itemInspectText" to={`/shop/${props.uniqueID}`}>
             <i className="fa-solid fa-magnifying-glass"></i>Inspect
           </Link>
         </div>

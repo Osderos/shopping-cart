@@ -1,29 +1,17 @@
 import React, { useState, useEffect } from "react";
 
 import Item from "../components/Item";
-import { getData } from "../utils/getData";
+
 import "../styles/shop.css";
 
-function Shop() {
-  const NUMBER_OF_ITEMS = 10;
-  const [itemsList, setItemsList] = useState([]);
-
-  useEffect(() => {
-    console.log("Shop component did mont");
-
-    const loadItems = async () => {
-      setItemsList(await getData(NUMBER_OF_ITEMS));
-    };
-
-    loadItems();
-  }, []);
-
-  const postItems = itemsList.map((item) => (
+function Shop(props) {
+  const postItems = props.itemsList.map((item) => (
     <Item
       title={item.title}
-      key={item.id}
-      uniqueID={item.id}
+      key={item.idNumber}
+      uniqueID={item.idNumber}
       imgLink={item.imgLink}
+      price={item.price}
     />
   ));
 

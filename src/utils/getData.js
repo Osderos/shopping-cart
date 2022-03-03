@@ -1,3 +1,5 @@
+import { priceGenerator } from "./priceGenerator";
+
 const getData = async (number) => {
   const itemsPool = [];
   for (let i = 0; i < number; i++) {
@@ -15,8 +17,9 @@ const getData = async (number) => {
 
       const item = {
         imgLink: itemImageLink,
-        id: data.data[i].id,
+        idNumber: data.data[i].id,
         title: data.data[i].title,
+        price: priceGenerator()
       };
       itemsPool.push(item);
     } catch (err) {

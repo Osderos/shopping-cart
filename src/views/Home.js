@@ -1,20 +1,19 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../styles/home.css";
 
 function Home() {
-
   useEffect(() => {
     console.log("Home component did mount");
-  
+
     const intrv = setInterval(flashText, 1000);
 
     return () => {
-      console.log('Home component did unmount')
+      console.log("Home component did unmount");
       clearInterval(intrv);
     };
-  },[]);
+  }, []);
 
-  
   const flashText = () => {
     const elem = document.querySelector("#flashWord");
     if (elem.className === "flashWhite") {
@@ -24,7 +23,6 @@ function Home() {
     }
   };
 
-
   return (
     <div className="home-container">
       <div className="welcome-container">
@@ -33,8 +31,8 @@ function Home() {
           This is a replica of a online selling site for the Odin Project
           curriculum
         </h1>
-        <h1 className="flashWhite" id="flashWord">
-          Visit our shop
+        <h1 >
+          <Link className="flashWhite" id="flashWord" to="/shop">Visit our shop</Link>
         </h1>
       </div>
     </div>
