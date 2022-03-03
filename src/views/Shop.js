@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
+
 import Item from "../components/Item";
 import { getData } from "../utils/getData";
 import "../styles/shop.css";
 
 function Shop() {
-  const NUMBER_OF_ITEMS = 5;
+  const NUMBER_OF_ITEMS = 10;
   const [itemsList, setItemsList] = useState([]);
 
   useEffect(() => {
